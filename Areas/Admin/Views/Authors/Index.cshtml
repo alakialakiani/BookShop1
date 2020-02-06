@@ -1,0 +1,30 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<BookShop.Models.Author>
+@addTagHelper*,ReflectionIT.Mvc.Paging
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div id="modal-placeholder"></div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-light">
+                نویسندگان
+            </div>
+            <div class="card-body">
+                <p>
+                    <button type="button" class="btn btn-info btn-icon" data-toggle="ajax-modal" data-url="@Url.Action("Create")">
+                        <i class="fa fa-plus text-white"></i> | افزودن نویسنده جدید
+                    </button>
+                    @*<a asp-action="Create" class="btn btn-primary">افزودن نویسنده جدید</a>*@
+                </p>
+                <div id="notification" data-url="@Url.Action("Notification")"></div>
+                <div id="tableContent">
+                    @await Html.PartialAsync("_AuthorsTable",Model)
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
