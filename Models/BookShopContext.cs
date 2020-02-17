@@ -18,14 +18,14 @@ namespace BookShop.Models
         {
             //optionsBuilder.UseLazyLoadingProxies().UseSqlServer(@"Server=(local);Database=BookShopDB;Trusted_Connection=True");
 
+            optionsBuilder.UseSqlServer(@"Server=.\SQLExpress;Database=BookShopDB;Trusted_Connection=True");
             //optionsBuilder.UseSqlServer(@"Server=(local);Database=BookShopDB;Trusted_Connection=True");
 
-            optionsBuilder.UseSqlServer(@"Server = 183.51.39.41,2016 ; Database = BookShopDB; User Id = CoreLearn; password = En1232ke1#52");
+            //optionsBuilder.UseSqlServer(@"Server = 183.51.39.41,2016 ; Database = BookShopDB; User Id = CoreLearn; password = En1232ke1#52");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new Author_BookMap());
             modelBuilder.ApplyConfiguration(new CustomerMap());
