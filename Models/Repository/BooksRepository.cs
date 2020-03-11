@@ -292,7 +292,7 @@ namespace BookShop.Models.Repository
                     return new EntityOperationResult(true, null);
                 }
                 else
-                    return new EntityOperationResult(false, new List<string>() {"کتابی یافت نشد !!!"});
+                    return new EntityOperationResult(false, new List<string>() {"سندی یافت نشد !!!"});
             }
 
             catch(Exception exp)

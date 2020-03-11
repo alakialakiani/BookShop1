@@ -11,7 +11,7 @@
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th class="text-center">
-                مشاهده کتاب ها
+                مشاهده سند ها
             </th>
             <th class="text-center">عملیات</th>
         </tr>
@@ -27,7 +27,7 @@
                     @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td class="text-center">
-                    <a asp-action="AuthorBooks" asp-route-id="@item.AuthorID" class="btn btn-info btn-sm">مشاهده کتاب ها</a>
+                    <a asp-action="AuthorBooks" asp-route-id="@item.AuthorID" class="btn btn-info btn-sm">مشاهده سند ها</a>
                 </td>
                 <td class="text-center">
                     <button type="button" class="btn btn-success btn-icon" data-toggle="ajax-modal" data-url="@Url.Action("Edit","Authors",values:new {id=item.AuthorID})">

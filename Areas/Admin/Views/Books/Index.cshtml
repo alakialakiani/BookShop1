@@ -14,7 +14,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header bg-light">
-                لیست کتاب ها
+                لیست سند ها
             </div>
             <div class="card-body">
                 <form>
@@ -24,7 +24,7 @@
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> جستجو</button>
                                 </span>
-                                <input id="input-group-1" name="title" class="form-control" placeholder="عنوان کتاب را واردکنید ..." type="text">
+                                <input id="input-group-1" name="title" class="form-control" placeholder="عنوان سند را واردکنید ..." type="text">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -41,7 +41,7 @@
                         @if (ViewBag.Search != "")
                         {
                             <div class="col-md-4">
-                                <a href="/Admin/Books/Index" class="float-left"><i class="fa fa-arrow-circle-left"></i>  بازگشت به لیست کتاب ها   </a>
+                                <a href="/Admin/Books/Index" class="float-left"><i class="fa fa-arrow-circle-left"></i>  بازگشت به لیست سند ها   </a>
                             </div>
                         }
 
@@ -51,7 +51,7 @@
 
                 <p>
                     <a class="btn btn-primary btn-block" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        جستجوی پیشرفته کتاب
+                        جستجوی پیشرفته سند
                     </a>
                 </p>
                 <div class="collapse" id="collapseExample">
@@ -181,7 +181,7 @@
                             else
                             {
                                 <tr>
-                                    <td colspan="11" class="text-center">هیچ کتابی در جدول وجود ندارد.</td>
+                                    <td colspan="11" class="text-center">هیچ سندی در جدول وجود ندارد.</td>
                                 </tr>
                             }
 
@@ -220,7 +220,7 @@ jQuery(document).ready(function($) {
             type: "get",
         }).done(function(result){
             $("#myModal").modal('show');
-            $(".modal-title").html('جزئیات اطلاعات کتاب');
+            $(".modal-title").html('جزئیات اطلاعات سند');
             $(".modal-body").html(result);
         });
     }

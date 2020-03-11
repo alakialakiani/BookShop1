@@ -61,7 +61,7 @@ namespace BookShop.Models.ViewModels
         [Display(Name = "شابک")]
         public string ISBN { get; set; }
 
-        [Display(Name = " این کتاب روی سایت منتشر شود.")]
+        [Display(Name = " این سند روی سایت منتشر شود.")]
         public bool IsPublish { get; set; }
 
 
@@ -85,7 +85,7 @@ namespace BookShop.Models.ViewModels
 
         public int[] CategoryID { get; set; }
 
-        //[Required(ErrorMessage = "بارگزاری فایل کتاب الزامی است.")]
+        //[Required(ErrorMessage = "بارگزاری فایل سند الزامی است.")]
         [UploadFileExtensions(".pdf", ErrorMessage = "فایل معتبر نمی باشد.")]
         public IFormFile File { get; set; }
 

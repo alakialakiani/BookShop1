@@ -12,7 +12,7 @@
             <li class="nav-item nav-dropdown">
                 <security-trimming asp-action="Index:Create" asp-controller="Books" asp-area="Admin">
                     <a href="#" class="nav-link nav-dropdown-toggle">
-                        <i class="icon icon-book-open"></i> مدیریت کتاب ها <i class="fa fa-caret-left"></i>
+                        <i class="icon icon-book-open"></i> مدیریت سند ها <i class="fa fa-caret-left"></i>
                     </a>
                 </security-trimming>
                
@@ -20,7 +20,7 @@
                     <security-trimming asp-action="Index" asp-controller="Books" asp-area="Admin">
                         <li class="nav-item">
                             <a href="/Admin/Books/Index" class="nav-link">
-                                <i class="icon icon-target"></i> مشاهده کتاب ها
+                                <i class="icon icon-target"></i> مشاهده سند ها
                             </a>
                         </li>
                     </security-trimming>
@@ -28,14 +28,14 @@
                     <security-trimming asp-action="Create" asp-controller="Books" asp-area="Admin">
                         <li class="nav-item">
                             <a href="/Admin/Books/Create" class="nav-link">
-                                <i class="icon icon-target"></i> افزودن کتاب جدید
+                                <i class="icon icon-target"></i> افزودن سند جدید
                             </a>
                         </li>
                     </security-trimming>
                     
                 </ul>
             </li>
-            <li class="nav-item nav-dropdown">
+            @*<li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="icon icon-user"></i> مدیریت نویسندگان <i class="fa fa-caret-left"></i>
                 </a>
@@ -69,7 +69,6 @@
                     </li>
                 </ul>
             </li>
-
             <li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="icon icon-user"></i> مدیریت ناشرین <i class="fa fa-caret-left"></i>
@@ -86,7 +85,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li>*@
 
             <li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
@@ -95,7 +94,7 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="/Admin/Languages/Index" class="nav-link">
-                            <i class="icon icon-target"></i> زبان های کتاب
+                            <i class="icon icon-target"></i> زبان های سند
                         </a>
                     </li>
                     <li class="nav-item">

@@ -23,7 +23,7 @@ namespace BookShop.Areas.Admin.Controllers
 {
     [Area("Admin")]
     //[Authorize]
-    [DisplayName("مدیریت کتاب ها")]
+    [DisplayName("مدیریت اسناد")]
     public class BooksController : Controller
     {
         private readonly IUnitOfWork _UW;
@@ -35,7 +35,7 @@ namespace BookShop.Areas.Admin.Controllers
         }
 
         [Authorize(Policy =ConstantPolicies.DynamicPermission)]
-        [DisplayName("مشاهده کتاب ها")]
+        [DisplayName("مشاهده اسناد")]
         public IActionResult Index(int page = 1, int row = 10, string sortExpression = "Title", string title = "")
         {
             title = String.IsNullOrEmpty(title) ? "" : title;
@@ -79,7 +79,7 @@ namespace BookShop.Areas.Admin.Controllers
         }
 
         [Authorize(Policy = ConstantPolicies.DynamicPermission)]
-        [DisplayName("افزودن کتاب جدید")]
+        [DisplayName("افزودن سند جدید")]
         public IActionResult Create()
         {
             ViewBag.LanguageID = new SelectList(_UW.BaseRepository<Language>().FindAll(), "LanguageID", "LanguageName");
@@ -134,7 +134,7 @@ namespace BookShop.Areas.Admin.Controllers
         }
 
         [Authorize(Policy = ConstantPolicies.DynamicPermission)]
-        [DisplayName("مشاهده جزئیات کتاب")]
+        [DisplayName("مشاهده جزئیات سند")]
         public IActionResult Details(int id)
         {
             var BookInfo = _UW._Context.Query<ReadAllBook>().Where(b => b.BookID == id).First();
@@ -143,7 +143,7 @@ namespace BookShop.Areas.Admin.Controllers
         }
 
         [Authorize(Policy = ConstantPolicies.DynamicPermission)]
-        [DisplayName("حذف کتاب")]
+        [DisplayName("حذف سند")]
         public async Task<IActionResult> Delete(int id)
         {
             var Book =await _UW.BaseRepository<Book>().FindByIDAsync(id);
@@ -170,7 +170,7 @@ namespace BookShop.Areas.Admin.Controllers
 
         [HttpGet]
         [Authorize(Policy = ConstantPolicies.DynamicPermission)]
-        [DisplayName("ویرایش اطلاعات کتاب")]
+        [DisplayName("ویرایش اطلاعات سند")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -320,7 +320,7 @@ namespace BookShop.Areas.Admin.Controllers
 
                 if (Book.Result == null)
                 {
-                    ViewBag.Msg = "کتابی با این شابک پیدا نشد.";
+                    ViewBag.Msg = "سندی با این شابک پیدا نشد.";
                 }
 
                 return View(await Book);
@@ -366,7 +366,7 @@ namespace BookShop.Areas.Admin.Controllers
         {
             var Book = _UW._Context.Books.Where(b => b.BookID == id).Select(b => new ImageBookViewModel { BookID = b.BookID, ImageByte = b.Image }).FirstOrDefault();
             if (Book == null)
-                ModelState.AddModelError("", "کتاب با این مشخصات یافت نشد.");
+                ModelState.AddModelError("", "سند با این مشخصات یافت نشد.");
 
             return PartialView("_InsertOrUpdateBookImage", Book);
         }
@@ -391,7 +391,7 @@ namespace BookShop.Areas.Admin.Controllers
                         TempData["Notifications"] = "آپلود فایل با موفقیت انجام شد.";
                     }
                     else
-                        ModelState.AddModelError("", "فایل تصویر کتاب نامعتبر است.");
+                        ModelState.AddModelError("", "فایل تصویر سند نامعتبر است.");
                 }
             }
             return PartialView("_InsertOrUpdateBookImage", ViewModel);
